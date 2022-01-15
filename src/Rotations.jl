@@ -1,7 +1,8 @@
 module Rotations
 
 include("Quaternions.jl")
+include("EulerAngles.jl")
 
-export Quaternion
+export Quaternion, EulerAngles
 
 end # module
