@@ -50,3 +50,12 @@ Base.log(q::Quaternion) = begin
         v/norm_v*acos(q[1]/norm_q)...
     ])
 end
+
+Base.one(q::Quaternion) = begin
+    Quaternion([
+        oneunit(q[1])
+        zeros(3)...
+    ])
+end
+
+Base.oneunit(q::Quaternion) = Base.one(q)

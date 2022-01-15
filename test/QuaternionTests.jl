@@ -54,3 +54,6 @@ conjugateq1 = conj(q1)
 @test norm(q1) == norm(a)
 
 expq1 = exp(q1)
+
+quat_identity = oneunit(q1)
+@test quat_identity[1] == 1.0
