@@ -41,3 +41,9 @@ multiplyq = q1*q2
 @test multiplyq[2] == (a1*b2 + b1*a2 + c1*d2 - d1*c2)
 @test multiplyq[3] == (a1*c2 - b1*d2 + c1*a2 + d1*b2)
 @test multiplyq[4] == (a1*d2 + b1*c2 - c1*b2 + d1*a2)
+
+conjugateq1 = conj(q1)
+@test conjugateq1[1] == q1[1]
+@test conjugateq1[2] == -q1[2]
+@test conjugateq1[3] == -q1[3]
+@test conjugateq1[4] == -q1[4]

@@ -25,4 +25,13 @@ Base.:*(q1::Quaternion, q2::Quaternion) = begin
     ])
 end
 
+Base.conj(q::Quaternion) = begin
+    Quaternion([
+        q[1]
+        -q[2]
+        -q[3]
+        -q[4]
+    ])
+end
+
 end # module
