@@ -1,6 +1,6 @@
 using LinearAlgebra
 
-mutable struct Quaternion{T} <: AbstractVector{T}
+mutable struct Quaternion{T<:Real} <: AbstractVector{T}
     data::Vector{T}
 end
 
