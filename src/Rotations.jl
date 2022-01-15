@@ -1,4 +1,5 @@
 module Rotations
+using LinearAlgebra
 
 export Quaternion
 
@@ -31,6 +32,25 @@ Base.conj(q::Quaternion) = begin
         -q[2]
         -q[3]
         -q[4]
+    ])
+end
+
+Base.exp(q::Quaternion) = begin
+    v = q[2:end]
+    norm_v = norm(v)
+    exp(q[1])*Quaternion([
+        cos(norm_v)
+        v/norm_v*sin(norm_v)...
+    ])
+end
+
+Base.log(q::Quaternion) = begin
+    norm_q = norm(q)
+    v = q[2:end]
+    norm_v = norm(v)
+    Quaternion([
+        log(norm_q)
+        v/norm_v*acos(q[1]/norm_q)...
     ])
 end
 

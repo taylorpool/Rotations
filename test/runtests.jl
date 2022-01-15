@@ -1,6 +1,7 @@
 using Test
 
 using Rotations
+using LinearAlgebra
 
 x = [1.0; 0.0; 0.0; 0.0]
 quat = Quaternion(x)
@@ -47,3 +48,9 @@ conjugateq1 = conj(q1)
 @test conjugateq1[2] == -q1[2]
 @test conjugateq1[3] == -q1[3]
 @test conjugateq1[4] == -q1[4]
+
+@test conj(conjugateq1) == q1
+
+@test norm(q1) == norm(a)
+
+expq1 = exp(q1)
