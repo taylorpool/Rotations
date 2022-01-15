@@ -1,0 +1,7 @@
+name = "Rotations"
+uuid = "6883a082-aec1-4c3d-97d7-e44979724199"
+authors = ["Taylor Pool <taylorpool.27@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
